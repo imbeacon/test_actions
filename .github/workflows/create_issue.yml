@@ -32,7 +32,7 @@ jobs:
           ${{ github.event.issue.body }}
            
           ${{ github.event.issue.html_url }}
-        fields: '{"labels":["IoT_Gateway"]}'
+        fields: '{"labels":["IoT_Gateway"], "status":{"name":"Backlog"}}'
 
     - name: Add comment with issue name
       id: comment_github_issue
