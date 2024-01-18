@@ -41,8 +41,8 @@ jobs:
         issue: ${{ steps.find_ticket.issue }}
         comment: |
           Github issue was commented by *${{ github.event.comment.user.login }}*:
-          ```
+           
           ${{ github.event.comment.body }}
-          ```
+           
 
       
