@@ -3,11 +3,12 @@ on:
     types:
       - created
 
-name: Create an issue in Jira
+name: Create a comment for ticket in Jira
 
 jobs:
-  create-issue-in-jira:
-    name: Issue creation
+  create-comment-for-ticket-in-jira:
+    if: ${{ !github.event.issue.pull_request }}
+    name: Ticket comment creation
     runs-on: ubuntu-latest
     steps:
     - name: Login
@@ -21,7 +22,7 @@ jobs:
       uses: peter-evans/find-comment@v2
       id: find_comment
       with:
-        issue-number: ${{  }}
+        issue-number: ${{ github.event.issue.number }}
         comment-author: github-actions[bot]
         direction: first
         nth: 0
