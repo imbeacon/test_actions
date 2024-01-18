@@ -40,7 +40,7 @@ jobs:
       with:
         issue: ${{ steps.find_ticket.issue }}
         comment: >
-          Github issue was commented by __${{ steps.find_comment.outputs.comment-author }}__:
+          Github issue was commented by **${{ steps.find_comment.outputs.comment-author }}**:
           
           ${{ github.event.comment.body }}
 
