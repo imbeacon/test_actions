@@ -1,7 +1,7 @@
 on:
-  issues:
+  issue_comment:
     types:
-      - commented
+      - created
 
 name: Create an issue in Jira
 
