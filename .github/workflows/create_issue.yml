@@ -27,7 +27,7 @@ jobs:
         issuetype: Task
         summary: '[GH issue ${{ github.event.issue.number }}] ${{ github.event.issue.title }}'
         description: ${{ github.event.issue.body }}
-        fields: '{"labels":["IoT_Gateway"]}'
+        fields: '{"labels":["IoT_Gateway"], "weblinks":["${{ github.event.issue.html_url }}"]"]}'
 
     - name: Add comment with issue name
       id: comment_github_issue
