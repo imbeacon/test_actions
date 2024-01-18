@@ -30,7 +30,7 @@ jobs:
           ${{ github.event.issue.body }}
           
           [View on GitHub](${{ github.event.issue.html_url }})
-        fields: '{"labels":["IoT_Gateway"], "weblinks":["${{ github.event.issue.html_url }}"]"]}'
+        fields: '{"labels":["IoT_Gateway"], "weblinks":["${{ github.event.issue.html_url }}"]]}'
 
     - name: Add comment with issue name
       id: comment_github_issue
