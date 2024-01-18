@@ -23,7 +23,7 @@ jobs:
       id: find_comment
       with:
         issue-number: ${{ github.event.issue.number }}
-        comment-author: github-actions[bot]
+        comment-author: 'github-actions[bot]'
         direction: first
         nth: 0
         
@@ -32,7 +32,7 @@ jobs:
       id: find_ticket
       uses: atlassian/gajira-find-issue-key@v3
       with:
-        string: ${{ steps.find_comment.outputs.comment-id }}
+        string: ${{ steps.find_comment.outputs.comment-body }}
 
     - name: Update Jira ticket
       if: steps.find_ticket.issue != ''
