@@ -37,8 +37,8 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           BODY: >
-            ${{ steps.create.outputs.issue }}
-            Thank you for your interest in ThingsBoard IoT Gateway
+            ${{ steps.create.outputs.issue }} 
+            Thank you for your interest in ThingsBoard IoT Gateway. 
             Your issue was registered.
         
     - name: Log created issue
