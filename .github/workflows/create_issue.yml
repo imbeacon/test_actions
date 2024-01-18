@@ -40,10 +40,11 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           BODY: |
-            ${{ steps.create.outputs.issue }} 
-            Hi @${{ github.event.issue.user.login }}.
-            Thank you for your interest in ThingsBoard IoT Gateway. 
+            Hi @${{ github.event.issue.user.login }}.  
+            Thank you for your interest in ThingsBoard IoT Gateway.  
             Your issue was registered, please wait for response from engineer.  
+            
+            ${{ steps.create.outputs.issue }} 
         
     - name: Log created issue
       run: echo "Issue ${{ steps.create.outputs.issue }} was created"
