@@ -39,7 +39,7 @@ jobs:
           BODY: >
             ${{ steps.create.outputs.issue }} 
             Thank you for your interest in ThingsBoard IoT Gateway. 
-            Your issue was registered.
+            Your issue was registered, please wait for response from engineer.  
         
     - name: Log created issue
       run: echo "Issue ${{ steps.create.outputs.issue }} was created"
