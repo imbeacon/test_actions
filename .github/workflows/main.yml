@@ -9,6 +9,8 @@ jobs:
   create-issue-in-jira:
     name: Issue creation
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
     - name: Login
       uses: atlassian/gajira-login@master
@@ -26,6 +28,18 @@ jobs:
         summary: '[GH issue ${{ github.event.issue.number }}] ${{ github.event.issue.title }}'
         description: ${{ github.event.issue.body }}
         fields: '{"labels":["IoT_Gateway"]}'
+
+    - name: Add comment with issue name
+      id: comment_github_issue
+      run: gh issue comment "$NUMBER" --body "$BODY"
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: >
+            ${{ steps.create.outputs.issue }}
+            Thank you for your interest in ThingsBoard IoT Gateway
+            Your issue was registered.
         
     - name: Log created issue
       run: echo "Issue ${{ steps.create.outputs.issue }} was created"
