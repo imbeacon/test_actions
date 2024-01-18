@@ -39,6 +39,6 @@ jobs:
       uses: atlassian/gajira-comment@v3
       with:
         issue: ${{ steps.find_ticket.issue }}
-        comment: 'Github issue was commented: \n\n ${{ github.event.comment.body }}'
+        comment: 'Github issue was commented: > ${{ github.event.comment.body }}'
 
       
