@@ -34,13 +34,13 @@ jobs:
       with:
         string: ${{ steps.find_comment.outputs.comment-body }}
 
-    - name: Update Jira ticket
-      if: steps.find_ticket.outputs.issue != ''
-      uses: atlassian/gajira-comment@v3
-      with:
-        issue: ${{ steps.find_ticket.issue }}
-        comment: |
-          Github issue was closed by *${{ github.event.sender.login }}*
+    # - name: Update Jira ticket
+    #   if: steps.find_ticket.outputs.issue != ''
+    #   uses: atlassian/gajira-comment@v3
+    #   with:
+    #     issue: ${{ steps.find_ticket.issue }}
+    #     comment: |
+    #       Github issue was closed by *${{ github.event.sender.login }}*
 
     - name: Move to Done
       id: transition
