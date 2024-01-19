@@ -3,7 +3,7 @@ on:
     types:
       - closed
 
-name: Create a comment for ticket in Jira
+name: Move ticket to done
 
 jobs:
   close-ticket-in-jira:
