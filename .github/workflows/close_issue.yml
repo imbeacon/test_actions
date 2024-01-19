@@ -38,13 +38,14 @@ jobs:
       if: steps.find_ticket.outputs.issue != ''
       uses: atlassian/gajira-comment@v3
       with:
-        issue: ${{ steps.find_ticket.issue }}
+        issue: ${{ steps.find_ticket.outputs.issue }}
         comment: |
           Github issue was closed by *${{ github.event.sender.login }}*
 
     - name: Move to Done
+      if: steps.find_ticket.outputs.issue != ''
       id: transition
       uses: atlassian/gajira-transition@v3
       with:
-        issue: ${{ steps.find_ticket.issue }}
+        issue: ${{ steps.find_ticket.outputs.issue }}
         transition: "Done"
